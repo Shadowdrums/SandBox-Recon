@@ -22,7 +22,7 @@ The script fetches the public IP address of the host device using an online serv
 The script performs a scan of common ports on the public IP address to identify open ports. This helps in assessing the security posture of the network by identifying potentially vulnerable open ports that could be exploited.
 
 ### 5. Ping Local IPs
-The script pings local IP addresses in the `192.168.x.1` range to identify the host's local IP address. This function helps in mapping the local network and identifying active devices.
+The script pings local IP addresses in the `192.168.x.1` range to identify the host's local router IP address. This function helps in mapping the local network and identifying host's local IP via router and use future scaning techinics.
 
 ## Prerequisites
 
