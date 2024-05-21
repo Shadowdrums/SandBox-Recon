@@ -13,10 +13,10 @@ To find host device information through Windows Sandbox
 The script determines the local IP address assigned to the Virtual Machine (VM) within the sandbox environment. This is crucial for identifying the VM's network position and facilitating further network operations.
 
 ### 2. Identify Host Machine's IP Address
-By examining the default gateway, the script retrieves the host machine's IP address. This feature is particularly useful for understanding the network topology and the relationship between the VM and the host machine.
+By examining the default gateway, the script retrieves the host machine's IP address. This feature is particularly useful for understanding the network topology and the relationship between the VM and the host machine. If you dont get the host device IP, the ping local IP's is the next step
 
 ### 3. Obtain Public IP Address
-The script fetches the public IP address of the host device using an online service. This provides a clear view of the external network presence and is essential for conducting external network assessments.
+The script fetches the public IP address of the host device using an online service. This provides a clear view of the external network presence and is essential for conducting external network assessments. Remember the host device could be using a VPN which will effect this IP address.
 
 ### 4. Public Network Port Scan
 The script performs a scan of common ports on the public IP address to identify open ports. This helps in assessing the security posture of the network by identifying potentially vulnerable open ports that could be exploited.
@@ -52,10 +52,11 @@ After the script completes its tasks, it will prompt you to press Enter to exit.
 The script encompasses several core functions, each designed to perform specific tasks:
 
 - Get-SandboxLocalIP: Identifies and retrieves the local IP address of the Sandbox VM.
-- Get-HostIPAddress: Determines the host machine's IP address via the default gateway.
+- Get-HostIPAddress: Determines the host machine's IP address via the default gateway if possible.
 - Get-PublicIPAddress: Obtains the public IP address of the host device through an external service.
 - Scan-PublicNetwork: Conducts a port scan on the public IP to identify open ports.
-- Ping-LocalIPs: Pings a range of local IP addresses to discover the host's local IP.
+- Ping-LocalIPs: Pings a range of local IP addresses to discover the host's router local IP.
+
 ## Contribution
 Contributions to this script are welcome. If you have suggestions for improvements or have found a bug, please create an issue or submit a pull request on GitHub.
 
