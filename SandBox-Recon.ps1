@@ -1,4 +1,4 @@
-# Function to get the local IP address of the Sandbox VM
+# Function to get the local IP address of the Windows Sandbox VM
 function Get-SandboxLocalIP {
     $localIP = Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -notlike "Loopback*" } | Select-Object -First 1 -ExpandProperty IPAddress
     return $localIP
@@ -76,7 +76,7 @@ function Scan-PublicNetwork {
     return $openPorts
 }
 
-# Function to ping local IPs starting with 192.168.x.1 until a reply is received
+# Function to ping local IPs starting with 192.168.x.1 until a reply is received/ scanning for Host Router
 function Ping-LocalIPs {
     Write-Host "Pinging local IPs starting with 192.168.x.1..."
     $replyIP = $null
